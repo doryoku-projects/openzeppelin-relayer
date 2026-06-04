@@ -12,21 +12,28 @@ else
   exit 1
 fi
 
-# Replace Sepolia RPC placeholder if defined in environment variables
-if [ -n "$SEPOLIA_RPC_URL" ]; then
-  echo "Injecting Sepolia RPC URL..."
-  sed -i "s|SEPOLIA_RPC_URL_PLACEHOLDER|${SEPOLIA_RPC_URL}|g" /app/config/config.json
-else
-  echo "Warning: SEPOLIA_RPC_URL environment variable is not defined."
-fi
+# Ensure keys directory exists
+mkdir -p /app/config/keys
 
-# Replace Mainnet RPC placeholder if defined in environment variables
-if [ -n "$MAINNET_RPC_URL" ]; then
-  echo "Injecting Mainnet RPC URL..."
-  sed -i "s|MAINNET_RPC_URL_PLACEHOLDER|${MAINNET_RPC_URL}|g" /app/config/config.json
-else
-  echo "Warning: MAINNET_RPC_URL environment variable is not defined."
-fi
+# Find all placeholders matching ${VAR_NAME} in the template config
+# and extract the variable names
+vars=$(grep -o '\${[A-Z0-9_]*}' /app/config/config.json.template | sed 's/\${//g; s/}//g' | sort -u)
+
+for var in $vars; do
+  # Get the value from the environment
+  val=$(eval echo "\$$var")
+  
+  # Fallback to dummy local RPC for empty RPC URLs to prevent boot crash
+  if [ -z "$val" ] && echo "$var" | grep -q "RPC_URL"; then
+    val="http://127.0.0.1:8545"
+    echo "Placeholder \${$var} is empty, using fallback: $val"
+  fi
+
+  # Escape special characters for sed (ampersand, backslash, slash)
+  escaped_val=$(echo "$val" | sed 's/[&/\]/\\&/g')
+  echo "Substituting placeholder \${$var}..."
+  sed -i "s|\\\${${var}}|${escaped_val}|g" /app/config/config.json
+done
 
 echo "Configuration initialized successfully."
 

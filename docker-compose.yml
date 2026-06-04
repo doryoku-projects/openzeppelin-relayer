@@ -6,13 +6,11 @@ services:
     container_name: copypools-relayer
     ports:
       - "8080:8080"
+    env_file:
+      - .env
     environment:
       - APP_PORT=8080
       - REDIS_URL=redis://redis:6379
-      - API_KEY=${API_KEY}
-      - KEYSTORE_PASSPHRASE=${KEYSTORE_PASSPHRASE}
-      - SEPOLIA_RPC_URL=${SEPOLIA_RPC_URL}
-      - MAINNET_RPC_URL=${MAINNET_RPC_URL}
       - LOG_LEVEL=info
       - IN_DOCKER=true
     volumes:

@@ -1,0 +1,48 @@
+{
+  "networks": [
+    {
+      "network": "sepolia",
+      "type": "evm",
+      "chain_id": 11155111,
+      "symbol": "ETH",
+      "required_confirmations": 1,
+      "average_blocktime_ms": 12000,
+      "rpc_urls": [
+        "https://eth-sepolia.g.alchemy.com/v2/dummy"
+      ]
+    },
+    {
+      "network": "mainnet",
+      "type": "evm",
+      "chain_id": 1,
+      "symbol": "ETH",
+      "required_confirmations": 1,
+      "average_blocktime_ms": 12000,
+      "rpc_urls": [
+        "https://eth-mainnet.g.alchemy.com/v2/dummy"
+      ]
+    },
+    {
+      "network": "base-sepolia",
+      "type": "evm",
+      "chain_id": 84532,
+      "symbol": "ETH",
+      "required_confirmations": 1,
+      "average_blocktime_ms": 2000,
+      "rpc_urls": [
+        "https://sepolia.base.org"
+      ]
+    },
+    {
+      "network": "base",
+      "type": "evm",
+      "chain_id": 8453,
+      "symbol": "ETH",
+      "required_confirmations": 1,
+      "average_blocktime_ms": 2000,
+      "rpc_urls": [
+        "https://mainnet.base.org"
+      ]
+    }
+  ]
+}
