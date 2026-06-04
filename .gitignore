@@ -1,0 +1,5 @@
+.env
+config/config.json
+config/keys/local-signer.json
+logs/
+.DS_Store

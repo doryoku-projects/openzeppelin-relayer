@@ -1,0 +1,52 @@
+{
+  "relayers": [
+    {
+      "id": "copypools-relayer-sepolia",
+      "name": "CopyPools Sepolia Relayer",
+      "network": "sepolia",
+      "paused": false,
+      "signer_id": "local-signer",
+      "network_type": "evm",
+      "custom_rpc_urls": [
+        {
+          "url": "SEPOLIA_RPC_URL_PLACEHOLDER"
+        }
+      ],
+      "policies": {
+        "min_balance": 0
+      }
+    },
+    {
+      "id": "copypools-relayer-mainnet",
+      "name": "CopyPools Mainnet Relayer",
+      "network": "mainnet",
+      "paused": false,
+      "signer_id": "local-signer",
+      "network_type": "evm",
+      "custom_rpc_urls": [
+        {
+          "url": "MAINNET_RPC_URL_PLACEHOLDER"
+        }
+      ],
+      "policies": {
+        "min_balance": 0
+      }
+    }
+  ],
+  "notifications": [],
+  "signers": [
+    {
+      "id": "local-signer",
+      "type": "local",
+      "config": {
+        "path": "config/keys/local-signer.json",
+        "passphrase": {
+          "type": "env",
+          "value": "KEYSTORE_PASSPHRASE"
+        }
+      }
+    }
+  ],
+  "networks": "./config/networks",
+  "plugins": []
+}
