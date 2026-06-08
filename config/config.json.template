@@ -31,126 +31,16 @@
       "policies": {
         "min_balance": 0
       }
-    },
-    {
-      "id": "copypools-relayer-base-sepolia",
-      "name": "CopyPools Base Sepolia Relayer",
-      "network": "base-sepolia",
-      "paused": false,
-      "signer_id": "copypools-signer",
-      "network_type": "evm",
-      "custom_rpc_urls": [
-        {
-          "url": "${COPYPOOLS_BASE_SEPOLIA_RPC_URL}"
-        }
-      ],
-      "policies": {
-        "min_balance": 0
-      }
-    },
-    {
-      "id": "copypools-relayer-base",
-      "name": "CopyPools Base Mainnet Relayer",
-      "network": "base",
-      "paused": false,
-      "signer_id": "copypools-signer",
-      "network_type": "evm",
-      "custom_rpc_urls": [
-        {
-          "url": "${COPYPOOLS_BASE_RPC_URL}"
-        }
-      ],
-      "policies": {
-        "min_balance": 0
-      }
-    },
-    {
-      "id": "project2-relayer-sepolia",
-      "name": "Project 2 Sepolia Relayer",
-      "network": "sepolia",
-      "paused": false,
-      "signer_id": "project2-signer",
-      "network_type": "evm",
-      "custom_rpc_urls": [
-        {
-          "url": "${PROJECT2_SEPOLIA_RPC_URL}"
-        }
-      ],
-      "policies": {
-        "min_balance": 0
-      }
-    },
-    {
-      "id": "project2-relayer-mainnet",
-      "name": "Project 2 Mainnet Relayer",
-      "network": "mainnet",
-      "paused": false,
-      "signer_id": "project2-signer",
-      "network_type": "evm",
-      "custom_rpc_urls": [
-        {
-          "url": "${PROJECT2_MAINNET_RPC_URL}"
-        }
-      ],
-      "policies": {
-        "min_balance": 0
-      }
-    },
-    {
-      "id": "project2-relayer-base-sepolia",
-      "name": "Project 2 Base Sepolia Relayer",
-      "network": "base-sepolia",
-      "paused": false,
-      "signer_id": "project2-signer",
-      "network_type": "evm",
-      "custom_rpc_urls": [
-        {
-          "url": "${PROJECT2_BASE_SEPOLIA_RPC_URL}"
-        }
-      ],
-      "policies": {
-        "min_balance": 0
-      }
-    },
-    {
-      "id": "project2-relayer-base",
-      "name": "Project 2 Base Mainnet Relayer",
-      "network": "base",
-      "paused": false,
-      "signer_id": "project2-signer",
-      "network_type": "evm",
-      "custom_rpc_urls": [
-        {
-          "url": "${PROJECT2_BASE_RPC_URL}"
-        }
-      ],
-      "policies": {
-        "min_balance": 0
-      }
     }
   ],
   "notifications": [],
   "signers": [
     {
       "id": "copypools-signer",
-      "type": "local",
+      "type": "aws_kms",
       "config": {
-        "path": "config/keys/copypools-signer.json",
-        "passphrase": {
-          "type": "env",
-          "value": "COPYPOOLS_KEYSTORE_PASSPHRASE"
-        }
-      }
-    },
-    {
-      "id": "project2-signer",
-      "type": "local",
-      "config": {
-        "path": "config/keys/project2-signer.json",
-        "passphrase": {
-          "type": "env",
-          "value": "PROJECT2_KEYSTORE_PASSPHRASE"
-        }
+        "region": "${COPYPOOLS_AWS_REGION}",
+        "key_id": "${COPYPOOLS_AWS_KMS_KEY_ID}"
       }
     }
   ],
