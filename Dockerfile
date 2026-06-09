@@ -1,11 +1,8 @@
 FROM openzeppelin/openzeppelin-relayer:latest
 
-# Copy configuration templates and entrypoint
-COPY config /app/config
-COPY entrypoint.sh /app/entrypoint.sh
-
-# Ensure script is executable
-RUN chmod +x /app/entrypoint.sh
+# Copy configuration templates and entrypoint with correct ownership and permissions
+COPY --chown=nonroot:nonroot config /app/config
+COPY --chown=nonroot:nonroot --chmod=755 entrypoint.sh /app/entrypoint.sh
 
 # Let Railway know which port is exposed
 EXPOSE 8080
