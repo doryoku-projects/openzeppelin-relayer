@@ -21,6 +21,17 @@
       "rpc_urls": [
         "https://eth-mainnet.g.alchemy.com/v2/dummy"
       ]
+    },
+    {
+      "network": "avalanche",
+      "type": "evm",
+      "chain_id": 43114,
+      "symbol": "AVAX",
+      "required_confirmations": 1,
+      "average_blocktime_ms": 2000,
+      "rpc_urls": [
+        "https://api.avax.network/ext/bc/C/rpc"
+      ]
     }
   ]
 }

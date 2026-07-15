@@ -31,6 +31,22 @@
       "policies": {
         "min_balance": 0
       }
+    },
+    {
+      "id": "copypools-relayer-avalanche",
+      "name": "CopyPools Avalanche Relayer",
+      "network": "avalanche",
+      "paused": false,
+      "signer_id": "copypools-signer",
+      "network_type": "evm",
+      "custom_rpc_urls": [
+        {
+          "url": "${COPYPOOLS_AVALANCHE_RPC_URL}"
+        }
+      ],
+      "policies": {
+        "min_balance": 0
+      }
     }
   ],
   "notifications": [],
