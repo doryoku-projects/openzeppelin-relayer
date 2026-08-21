@@ -32,6 +32,17 @@
       "rpc_urls": [
         "https://api.avax.network/ext/bc/C/rpc"
       ]
+    },
+    {
+      "network": "arbitrum",
+      "type": "evm",
+      "chain_id": 42161,
+      "symbol": "ETH",
+      "required_confirmations": 1,
+      "average_blocktime_ms": 250,
+      "rpc_urls": [
+        "https://arb1.arbitrum.io/rpc"
+      ]
     }
   ]
 }
