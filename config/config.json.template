@@ -47,6 +47,22 @@
       "policies": {
         "min_balance": 0
       }
+    },
+    {
+      "id": "copypools-relayer-arbitrum",
+      "name": "CopyPools Arbitrum Relayer",
+      "network": "arbitrum",
+      "paused": false,
+      "signer_id": "copypools-signer",
+      "network_type": "evm",
+      "custom_rpc_urls": [
+        {
+          "url": "${COPYPOOLS_ARBITRUM_RPC_URL}"
+        }
+      ],
+      "policies": {
+        "min_balance": 0
+      }
     }
   ],
   "notifications": [],
