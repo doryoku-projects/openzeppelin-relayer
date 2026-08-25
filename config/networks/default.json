@@ -43,6 +43,27 @@
       "rpc_urls": [
         "https://arb1.arbitrum.io/rpc"
       ]
+    },
+    {
+      "network": "robinhood",
+      "type": "evm",
+      "chain_id": 4663,
+      "symbol": "ETH",
+      "required_confirmations": 1,
+      "average_blocktime_ms": 100,
+      "features": [
+        "eip1559"
+      ],
+      "tags": [
+        "rollup",
+        "arbitrum-based"
+      ],
+      "explorer_urls": [
+        "https://robinhoodchain.blockscout.com"
+      ],
+      "rpc_urls": [
+        "https://rpc.mainnet.chain.robinhood.com"
+      ]
     }
   ]
 }

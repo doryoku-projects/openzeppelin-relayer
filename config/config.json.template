@@ -63,6 +63,22 @@
       "policies": {
         "min_balance": 0
       }
+    },
+    {
+      "id": "copypools-relayer-robinhood",
+      "name": "CopyPools Robinhood Relayer",
+      "network": "robinhood",
+      "paused": false,
+      "signer_id": "copypools-signer",
+      "network_type": "evm",
+      "custom_rpc_urls": [
+        {
+          "url": "${COPYPOOLS_ROBINHOOD_RPC_URL}"
+        }
+      ],
+      "policies": {
+        "min_balance": 0
+      }
     }
   ],
   "notifications": [],
